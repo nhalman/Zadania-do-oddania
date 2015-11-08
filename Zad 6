@@ -1,0 +1,58 @@
+/*Zadanie #6
+Napisz program, który wczyta z wejścia ciąg znaków i wypisze ilość liczb i liter występujących
+w podanym ciągu znaków.
+Wejście
+2
+Na wejściu podana jest liczba testów t. W t-następnych liniach podawane są słowa nie dłuższe
+niż 30 znaków.
+Wyjście
+Na wyjściu wypisywana jest ilość liter i liczb występujących w ciagu znakowym, każde w kolejnej.
+linii. Pierwszą liczbą jest ilość liter w ciągu znakowym, drugą ilość liczb w ciagu znakowym.
+Przykład
+Wejście:
+2
+infor99tyka
+p8942amo
+Wyjście:
+9 2
+4 4*/
+
+#include "stdafx.h"
+#include <iostream>
+#include <cstdlib>
+//#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_DEPRECATE
+using namespace std;
+
+int main()
+{
+	int t; //ilość testów
+	char n[31]; //wczytywany napis
+	int litery;//ilość liter w danym napisie
+	int cyfry;//ilość cyfr w danym napisie
+
+	cin >> t;
+
+	for (int i = 0; i < t; i++){
+		cin >> n;
+		litery = 0;
+		cyfry = 0;
+		for (int j = 0; j < 31; j++){
+			if (int(n[j]) > 47 && int(n[j]) < 58){
+				cyfry++; //zliczanie cyfr
+			}
+			else if ((int(n[j]) > 64 && int(n[j]) < 91) || (int(n[j]) > 96 && int(n[j]) < 123)){
+				litery++; //zliczanie liter
+			}
+		}
+
+		cout << litery << " " << cyfry << "\n";
+	}
+
+	
+
+	
+
+	system("PAUSE");
+	return 0;
+}
