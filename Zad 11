@@ -1,0 +1,67 @@
+/*
+Zadanie #11
+Napisz program który będzie składał się z trzech funkcji ”alokuj” tworzącej tablice o rozmiarze
+podanym przez użytkownika oraz ”wypelnij” - wypelniajaca tablice liczbami od n do 1 (gdzie n
+to rozmiar tablicy) oraz ”wypisz” wypisujący tablicę. Pamiętaj, żeby poruszać się po tablicy za
+pomocą wskaźników a nie nawiasu [ ] (takie programy nie będą oceniane).
+Wejście
+Na wejściu podawana jest liczba całkowita będąca wielkością tablicy do zaalokowania.
+Wyjście
+Na wyjściu podawane są cyfry wypisane z tablicy każda rozdzielona spacją
+Przykład
+Wejście:
+4
+7
+Wyjście:
+4321
+7654321*/
+
+#include "stdafx.h"
+#include <iostream>
+#include <cstdlib>
+#define _CRT_SECURE_NO_DEPRECATE
+using namespace std;
+
+
+int* alokuj(int n){
+	int *tab;
+	tab = (int *)malloc(n*sizeof(int));
+	return tab;
+}
+
+int* wypelnij(int n, int *tab){
+
+	for (int i = 0; i < n; i++){
+		*(tab + i) = n - i;
+	}
+	return tab;
+}
+
+
+void wypisz(int n, int *tab){
+
+	for (int i = 0; i < n-1; i++){
+		cout << *(tab+i) << " ";
+	}
+	cout << *(tab+n-1) << "\n";
+}
+
+int main()
+{
+
+	int n; //wielkością tablicy do zaalokowania
+	int *tab;
+
+	cin >> n;
+
+	tab = alokuj(n);
+	tab = wypelnij(n, tab);
+	wypisz(n,tab);
+
+	free(tab);
+
+	system("PAUSE");
+	return 0;
+}
+
+
