@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+ 
+ 
+int main() {
+	float a;
+	float b;
+	float c;
+	float d;
+	int ilosc;
+ 
+	while (scanf("%f %f %f", &a, &b, &c) > -1){
+ 
+		d = b*b - 4 * a*c;
+ 
+		if (d < 0){
+			ilosc = 0;
+		}
+		else if (d == 0){
+			ilosc = 1;
+		}
+		else {
+			ilosc = 2;
+		}
+		cout << ilosc << '\n';
+	}
+	return 0;
+}
