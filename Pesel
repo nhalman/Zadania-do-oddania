@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+ 
+ 
+int main() {
+	int i;
+	int ilosc;
+	char p[12];
+	int wynik;
+ 
+ 
+	scanf("%d", &ilosc);
+ 
+	for (i = 0; i < ilosc; i++){
+		scanf("%s", p);		
+		wynik = 1 * p[0] + 3 * p[1] + 7 * p[2] + 9 * p[3] + 1 * p[4] + 3 * p[5] + 7 * p[6] + 9 * p[7] + 1 * p[8] + 3 * p[9] + 1 * p[10];
+		if (wynik > 0){
+			if (wynik % 10 == 0){
+				printf("D\n");
+			}
+			else{
+				printf("N\n");
+			}
+		}
+		else{
+			printf("N\n");
+		}
+	}
+ 
+	return 0;
+}
